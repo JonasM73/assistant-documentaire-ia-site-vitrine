@@ -1,24 +1,17 @@
 /* =========================================================================
-   formulaire.js — envoi des demandes de devis, sans serveur.
+   formulaire.js — envoi des demandes de devis via la fonction /api/contact
+   (Cloudflare Pages Function → Resend). Aucune clé dans ce fichier : la clé
+   Resend est un secret du projet Pages (Settings → Variables and secrets).
 
-   ÉTAPE À FAIRE UNE FOIS, EN 2 MINUTES :
-   ---------------------------------------------------------------------
-   1. Aller sur https://web3forms.com — saisir jonas@jonasmionnet.com,
-      recevoir une clé d'accès par courriel. Gratuit, aucun compte à créer.
-   2. Coller cette clé ci-dessous à la place de METTRE_LA_CLE_ICI.
-   3. Redéployer. C'est tout.
-
-   TANT QUE LA CLÉ N'EST PAS RENSEIGNÉE, le formulaire ne se contente pas
-   d'échouer en silence : il ouvre le logiciel de messagerie du visiteur
-   avec un message déjà rédigé. La demande arrive quand même — c'est juste
-   moins fluide pour lui.
+   Si la fonction répond en erreur (clé absente, panne), le formulaire ouvre
+   le logiciel de messagerie du visiteur avec un message déjà rédigé : la
+   demande arrive quand même.
    ========================================================================= */
 (function () {
   "use strict";
 
-  var CLE = "METTRE_LA_CLE_ICI";
   var DESTINATAIRE = "jonas@jonasmionnet.com";
-  var ENDPOINT = "https://api.web3forms.com/submit";
+  var ENDPOINT = "/api/contact";
 
   var form = document.getElementById("devis-form");
   if (!form) return;
@@ -84,23 +77,18 @@
       return;
     }
 
-    if (CLE === "METTRE_LA_CLE_ICI") { replieVersMessagerie(); return; }
-
     if (bouton) { bouton.disabled = true; }
     if (libelle) { libelle.textContent = "Envoi en cours…"; }
     dire("Envoi en cours…");
 
     var charge = {
-      access_key: CLE,
-      subject: "Demande de devis — " + valeur("entreprise"),
-      from_name: "Site Assistant·docs",
-      replyto: valeur("email"),
-      Entreprise: valeur("entreprise"),
-      Contact: valeur("nom"),
-      Courriel: valeur("email"),
-      Site: valeur("site") || "—",
-      Demande: valeur("objet"),
-      Message: valeur("message") || "—"
+      nom: valeur("nom"),
+      entreprise: valeur("entreprise"),
+      email: valeur("email"),
+      site: valeur("site"),
+      objet: valeur("objet"),
+      message: valeur("message"),
+      _gotcha: valeur("_gotcha")
     };
 
     fetch(ENDPOINT, {

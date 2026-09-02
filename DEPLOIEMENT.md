@@ -19,7 +19,11 @@ sur `main` redéploie le site.
 
 ## Reste à faire
 
-- Clé Web3Forms dans `formulaire.js` (voir l'en-tête du fichier) ; sans clé le formulaire ouvre le client mail.
+- **Formulaire de contact** : `functions/api/contact.js` (Pages Function) envoie via Resend.
+  Dans Cloudflare → projet Pages → Settings → Variables and secrets (Production), définir :
+  `RESEND_API_KEY` (secret, clé dédiée à ce site), `DESTINATAIRE` (ex. jonas@jonasmionnet.com),
+  `EXPEDITEUR` (ex. `Assistant documentaire <site@jonasmionnet.com>` — domaine vérifié dans Resend).
+  Redéployer après (Deployments → Retry). Sans clé, le formulaire ouvre le client mail du visiteur.
 - `portrait.jpg` à déposer à la racine pour le bloc « Qui construit ».
 - L'adresse `jonas@jonasmionnet.com` reste valable (domaine du portfolio).
 - `_headers` : en-têtes de sécurité et de cache, lus automatiquement par Pages.
