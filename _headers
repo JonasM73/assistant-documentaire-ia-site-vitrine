@@ -10,3 +10,6 @@
 
 /partage.png
   Cache-Control: public, max-age=86400
+
+/formulaire.js
+  Cache-Control: no-cache
