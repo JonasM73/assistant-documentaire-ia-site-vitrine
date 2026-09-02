@@ -22,8 +22,11 @@ sur `main` redéploie le site.
 - **Formulaire de contact** : `functions/api/contact.js` (Pages Function) envoie via Resend.
   Dans Cloudflare → projet Pages → Settings → Variables and secrets (Production), définir :
   `RESEND_API_KEY` (secret, clé dédiée à ce site), `DESTINATAIRE` (ex. jonas@jonasmionnet.com),
-  `EXPEDITEUR` (ex. `Assistant documentaire <site@jonasmionnet.com>` — domaine vérifié dans Resend).
+  `EXPEDITEUR` = `Assistant documentaire <contact@assistant-documentaire.com>` (domaine vérifié dans Resend, région EU).
   Redéployer après (Deployments → Retry). Sans clé, le formulaire ouvre le client mail du visiteur.
 - `portrait.jpg` à déposer à la racine pour le bloc « Qui construit ».
-- L'adresse `jonas@jonasmionnet.com` reste valable (domaine du portfolio).
+- L'adresse de réception reste `jonas@jonasmionnet.com` (boîte Google Workspace). Pour que
+  `contact@assistant-documentaire.com` reçoive aussi : Cloudflare → Email → Email Routing → règle
+  `contact` → jonas@jonasmionnet.com.
+- Diagnostic : GET https://assistant-documentaire.com/api/contact affiche l'état de la configuration.
 - `_headers` : en-têtes de sécurité et de cache, lus automatiquement par Pages.
