@@ -102,11 +102,13 @@
           form.reset();
           dire("C'est envoyé. Je vous réponds sous 48 h, souvent bien avant.", "ok");
         } else {
+          if (window.console) { console.error("Formulaire : réponse de /api/contact", d); }
           dire("L'envoi a échoué. Je bascule sur votre messagerie…", "ko");
           setTimeout(replieVersMessagerie, 900);
         }
       })
-      .catch(function () {
+      .catch(function (e) {
+        if (window.console) { console.error("Formulaire : échec réseau", e); }
         dire("L'envoi a échoué. Je bascule sur votre messagerie…", "ko");
         setTimeout(replieVersMessagerie, 900);
       })

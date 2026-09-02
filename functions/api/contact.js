@@ -83,12 +83,24 @@ export async function onRequestPost(context) {
   if (!r.ok) {
     const err = await r.text().catch(() => "");
     console.error("Resend a refusé l'envoi :", r.status, err);
-    return json({ success: false, error: "Envoi refusé" }, 502);
+    // Le détail est renvoyé au navigateur (visible dans la console) pour diagnostiquer.
+    return json({ success: false, error: "Envoi refusé", resend_status: r.status, resend_detail: err.slice(0, 500) }, 502);
   }
   return json({ success: true });
 }
 
+// GET /api/contact : état de la configuration, sans jamais afficher la clé.
+export function onRequestGet({ env }) {
+  const cle = env.RESEND_API_KEY || "";
+  return new Response(JSON.stringify({
+    fonction: "ok",
+    RESEND_API_KEY: cle ? `présente (${cle.length} caractères, commence par ${cle.slice(0, 3)})` : "ABSENTE",
+    DESTINATAIRE: env.DESTINATAIRE || "(défaut) jonas@jonasmionnet.com",
+    EXPEDITEUR: env.EXPEDITEUR || "(défaut) Assistant documentaire <site@jonasmionnet.com>",
+  }, null, 2), { headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" } });
+}
+
 // Toute autre méthode : 405.
 export function onRequest() {
-  return new Response("Méthode non autorisée", { status: 405, headers: { Allow: "POST" } });
+  return new Response("Méthode non autorisée", { status: 405, headers: { Allow: "GET, POST" } });
 }
