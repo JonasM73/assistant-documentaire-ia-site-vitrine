@@ -24,7 +24,8 @@ sur `main` redéploie le site.
   `RESEND_API_KEY` (secret, clé dédiée à ce site), `DESTINATAIRE` (ex. jonas@jonasmionnet.com),
   `EXPEDITEUR` = `Assistant documentaire <contact@assistant-documentaire.com>` (domaine vérifié dans Resend, région EU).
   Redéployer après (Deployments → Retry). Sans clé, le formulaire ouvre le client mail du visiteur.
-- `portrait.jpg` à déposer à la racine pour le bloc « Qui construit ».
+- `img/portrait.jpg` (photo de Jonas, ~800×1000 px, JPEG) à déposer pour le bloc « Qui construit » ; tant qu'il manque, `img/team.jpg` s'affiche.
+- Vidéo Horizon Immobilier : une fois publiée sur YouTube (non répertoriée), remplacer le bloc « Vidéo en préparation » de `index.html` (section démo) par l'iframe indiquée en commentaire.
 - L'adresse de réception reste `jonas@jonasmionnet.com` (boîte Google Workspace). Pour que
   `contact@assistant-documentaire.com` reçoive aussi : Cloudflare → Email → Email Routing → règle
   `contact` → jonas@jonasmionnet.com.

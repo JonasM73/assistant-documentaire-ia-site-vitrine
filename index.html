@@ -24,7 +24,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfessionalService",
 "name":"Jonas Mionnet — assistants documentaires",
-"description":"Conception et exploitation d'assistants documentaires pour PME : l'assistant répond aux questions des équipes à partir des documents de l'entreprise, en citant ses sources.",
+"description":"Conception et déploiement d'assistants documentaires pour PME : l'assistant répond aux questions des équipes à partir des documents de l'entreprise, en citant ses sources.",
 "url":"https://assistant-documentaire.com/","email":"jonas@jonasmionnet.com",
 "areaServed":{"@type":"Country","name":"France"},
 "founder":{"@type":"Person","name":"Jonas Mionnet","url":"https://www.linkedin.com/in/jonas-mionnet-5339012a0"},
@@ -506,13 +506,13 @@
         <p class="hero__lead" data-reveal="up" data-delay="180">
           Un assistant IA connecté à <em>vos</em> procédures, barèmes, catalogues et contrats.
           Il retrouve la réponse, cite sa source et refuse de répondre lorsque l'information
-          manque. Installé sur vos propres comptes en 5 jours : vous gardez le contrôle, je
+          manque. Installé sur vos propres comptes en 5 jours ouvrables : vous gardez le contrôle, je
           configure tout.
         </p>
         <div class="hero__cta" data-reveal="up" data-delay="280">
           <a class="btn btn--sig" href="#devis" data-magnetic="0.25"><span>Demander ma mini-démo</span>
             <svg viewBox="0 0 24 24"><path d="M5 12h13"/><path d="m12 5 7 7-7 7"/></svg></a>
-          <a class="link" href="#demo">Voir la démo de 2 minutes
+          <a class="link" href="#demo">Voir ce que fait l'assistant
             <svg viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m5 12 7 7 7-7"/></svg></a>
         </div>
         <div class="hero__pills" data-stagger="90" data-reveal="fade" data-delay="380">
@@ -533,8 +533,8 @@
             le taux retenu est donc de 4,0 %, soit 12 800 € d'honoraires.
           </div>
           <div class="peek__src">
-            <span class="peek__chip"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>bareme-honoraires-2026.pdf · p. 1</span>
-            <span class="peek__chip"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>mandats-et-zones.pdf</span>
+            <span class="peek__chip"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>01_bareme-honoraires-2026.pdf · p. 1</span>
+            <span class="peek__chip"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>02_guide-des-mandats.pdf</span>
           </div>
           <p class="peek__cap">Trois informations croisées dans deux tableaux<span class="peek__dots"><i></i><i></i><i></i></span><br>
             démonstration Horizon Immobilier — réseau fictif</p>
@@ -622,10 +622,12 @@
   <div class="shell">
     <div style="max-width:64ch;margin-bottom:clamp(34px,4.4vw,64px)">
       <p class="eyebrow" data-reveal="fade">La démo</p>
-      <h2 class="h2" data-reveal="fade" data-split>Réponse, source et refus, en deux minutes.</h2>
+      <h2 class="h2" data-reveal="fade" data-split>Réponse, source et refus.</h2>
       <p class="lead" style="margin-top:22px" data-reveal="up" data-delay="140">
-        Une démonstration réelle, sans montage : une question, la réponse et son document,
-        une question de suivi, puis un refus quand l'information n'existe pas.
+        Une question, la réponse et son document, une question de suivi, puis un refus quand
+        l'information n'existe pas. La vidéo de démonstration sur le réseau Horizon Immobilier
+        est en cours d'enregistrement ; en attendant, la mini-démo sur vos propres documents
+        reste le meilleur moyen de juger.
       </p>
     </div>
 
@@ -634,13 +636,17 @@
         <div data-reveal="scale">
           <div class="frame">
             <div class="frame__glow" aria-hidden="true"></div>
-            <iframe src="https://www.youtube-nocookie.com/embed/zOcjEhi_-oY?rel=0&modestbranding=1"
-              title="Assistant IA sur vos documents — démo"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen loading="lazy"></iframe>
+            <!-- Vidéo Horizon Immobilier à venir : remplacer ce bloc par l'iframe YouTube
+                 (youtube-nocookie.com/embed/ID?rel=0&modestbranding=1, title, allow, allowfullscreen, loading="lazy") -->
+            <div style="position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:24px">
+              <div>
+                <p class="eyebrow" style="margin-bottom:10px">Vidéo en préparation</p>
+                <p style="max-width:34ch;margin:0 auto;opacity:.8">Démonstration filmée sur le réseau fictif Horizon Immobilier — barème d'honoraires, mandats, diagnostics.</p>
+              </div>
+            </div>
           </div>
         </div>
-        <p class="cap" data-reveal="up" data-delay="120">Entreprise de démonstration fictive ; l'assistant, lui, est
+        <p class="cap" data-reveal="up" data-delay="120">Réseau d'agences fictif ; l'assistant, lui, est
           celui que vous recevez.</p>
       </div>
 
@@ -657,8 +663,8 @@
         </ul>
         <div class="kpis" style="grid-template-columns:repeat(2,1fr);margin-top:34px">
           <div class="kpi" data-reveal="up">
-            <div class="kpi__v"><span class="num" data-count="0">0</span></div>
-            <span class="num-lbl">réponse inventée sur les 20 questions de recette — une seule est un défaut bloquant</span>
+            <div class="kpi__v"><span class="num" data-count="20">20</span><span class="kpi__u">questions</span></div>
+            <span class="num-lbl">de recette arrêtées avec vous avant le test, dont plusieurs sans réponse — une réponse inventée est un défaut bloquant</span>
           </div>
           <div class="kpi" data-reveal="up" data-delay="90">
             <div class="kpi__v"><span class="num" data-count="5">5</span><span class="kpi__u">jours</span></div>
@@ -813,7 +819,9 @@
             <p>Vous ouvrez vos deux comptes techniques, je configure tout avec vous, puis je
               construis l'assistant sur l'ensemble de vos documents : 5 jours ouvrables. Recette
               d'au moins 20 questions arrêtées ensemble, procès-verbal remis, un tour
-              d'ajustement — et le solde n'est dû que si les critères convenus sont atteints.</p>
+              d'ajustement — et le solde n'est dû que si les critères convenus sont atteints
+              (sinon : corrections sans supplément sous dix jours ouvrables, deux cycles au plus ;
+              au-delà, vous pouvez arrêter, solde non dû et acompte restitué).</p>
           </div>
           <div class="step__media"><img src="img/deliver.jpg" alt="Personne travaillant sur un ordinateur portable" loading="lazy"></div>
         </article>
@@ -847,7 +855,8 @@
         </p>
         <ul class="prob__list" data-stagger="90">
           <li><b>La recette est écrite au contrat</b>, pas promise sur une page : 20 questions
-            arrêtées avec vous avant le test, procès-verbal remis, solde conditionné.</li>
+            arrêtées avec vous avant le test, procès-verbal remis, solde conditionné aux critères
+            convenus — délai et nombre de cycles de correction écrits au devis.</li>
           <li><b>Une annexe RGPD (art. 28)</b> est jointe à chaque devis : ce que je fais de vos
             documents, combien de temps, avec quelles mesures.</li>
           <li><b>Une documentation d'exploitation</b> vous est remise à la livraison : un autre
@@ -871,7 +880,7 @@
     <div class="faq" style="max-width:78ch" data-stagger="60">
       <details>
         <summary><span>Où sont stockés nos documents ?</span><i class="faq__sign"></i></summary>
-        <div class="faq__body"><b>Sur une instance dédiée, à votre nom, en région européenne.</b> Le compte, le moyen de paiement et les accès vous appartiennent ; l'instance n'est partagée avec aucun autre client. Au moment de répondre, seuls les extraits pertinents sont transmis au fournisseur du modèle de langage, via votre propre clé, et il ne les utilise pas pour entraîner ses modèles sur ses offres professionnelles. Après la livraison, je ne conserve aucune copie de vos documents.</div>
+        <div class="faq__body"><b>Sur une instance dédiée, à votre nom, en région européenne.</b> Le compte, le moyen de paiement et les accès vous appartiennent ; l'instance n'est partagée avec aucun autre client. Au moment de répondre, seuls les extraits pertinents sont transmis au fournisseur du modèle de langage, via votre propre clé, et il ne les utilise pas pour entraîner ses modèles sur ses offres professionnelles. Mes copies de travail sont supprimées dans les 30 jours suivant la livraison, attestation sur demande.</div>
       </details>
       <details>
         <summary><span>Et s'il invente une réponse ?</span><i class="faq__sign"></i></summary>
@@ -1022,7 +1031,7 @@
   <div class="modal__box">
     <h3 id="pw-title">Essayer l'assistant</h3>
     <p>Entrez le code d'accès reçu lors de notre échange. L'assistant de démonstration répond sur
-      les documents d'une entreprise fictive (Boréale Équipement).</p>
+      les documents d'une entreprise fictive.</p>
     <input id="pw-input" type="password" placeholder="Code d'accès" autocomplete="off">
     <div class="modal__err" id="pw-err"></div>
     <div class="modal__row">
@@ -1105,7 +1114,7 @@
         mode: "floating",
         apiBase: API,
         assistantName: "Assistant documentaire",
-        clientName: "Boréale Équipement (démo)"
+        clientName: "Entreprise de démonstration"
       });
       tryBtn.querySelector("span").textContent = "Assistant lancé — voir en bas à droite";
       tryBtn.disabled = true;

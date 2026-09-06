@@ -6,7 +6,7 @@
  * (environnement Production) :
  *   RESEND_API_KEY   (secret)  clé API Resend — nouvelle clé dédiée à ce site
  *   DESTINATAIRE     (texte)   adresse qui reçoit les demandes, ex. jonas@jonasmionnet.com
- *   EXPEDITEUR       (texte)   ex. "Assistant documentaire <site@jonasmionnet.com>"
+ *   EXPEDITEUR       (texte)   ex. "Assistant documentaire <contact@assistant-documentaire.com>"
  *                              le domaine après @ doit être vérifié dans Resend
  */
 export async function onRequestPost(context) {
@@ -45,7 +45,7 @@ export async function onRequestPost(context) {
   }
 
   const destinataire = env.DESTINATAIRE || "jonas@jonasmionnet.com";
-  const expediteur = env.EXPEDITEUR || "Assistant documentaire <site@jonasmionnet.com>";
+  const expediteur = env.EXPEDITEUR || "Assistant documentaire <contact@assistant-documentaire.com>";
 
   const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const ligne = (k, v) => `<tr><td style="padding:4px 12px 4px 0;color:#666">${k}</td><td style="padding:4px 0">${esc(v || "—")}</td></tr>`;
@@ -89,15 +89,11 @@ export async function onRequestPost(context) {
   return json({ success: true });
 }
 
-// GET /api/contact : état de la configuration, sans jamais afficher la clé.
+// GET /api/contact : simple sonde de configuration (rien de plus que « configuré ou non »).
 export function onRequestGet({ env }) {
-  const cle = env.RESEND_API_KEY || "";
-  return new Response(JSON.stringify({
-    fonction: "ok",
-    RESEND_API_KEY: cle ? `présente (${cle.length} caractères, commence par ${cle.slice(0, 3)})` : "ABSENTE",
-    DESTINATAIRE: env.DESTINATAIRE || "(défaut) jonas@jonasmionnet.com",
-    EXPEDITEUR: env.EXPEDITEUR || "(défaut) Assistant documentaire <site@jonasmionnet.com>",
-  }, null, 2), { headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" } });
+  const ok = Boolean(env.RESEND_API_KEY && env.EXPEDITEUR && env.DESTINATAIRE);
+  return new Response(JSON.stringify({ fonction: "ok", configure: ok }),
+    { headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" } });
 }
 
 // Toute autre méthode : 405.
