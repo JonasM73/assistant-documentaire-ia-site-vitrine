@@ -450,6 +450,23 @@
     .prob__stamp small{margin-left:0;}
     .modal__row{flex-direction:column;}
   }
+
+  /* carte « qui construit » — remplace le portrait tant qu'il n'y a pas de photo */
+  .prob__media--card{display:flex;flex-direction:column;gap:14px;justify-content:center;
+    padding:clamp(26px,3.4vw,44px);background:
+      linear-gradient(155deg,rgba(46,214,150,.07),transparent 58%),var(--ink-900);
+    box-shadow:inset 0 0 0 1px var(--rule-ink-2);border-radius:var(--r-md,14px);aspect-ratio:4/5;}
+  .card__eyebrow{font:var(--t-micro);letter-spacing:.19em;text-transform:uppercase;
+    color:var(--sig-400);margin:0;}
+  .card__name{font-family:var(--disp);font-weight:800;letter-spacing:-.035em;
+    font-size:clamp(1.6rem,3vw,2.3rem);line-height:1;margin:0;color:var(--on-ink);}
+  .card__role{margin:0;font-size:14.5px;color:var(--on-ink-3);}
+  .card__list{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:9px;}
+  .card__list li{position:relative;padding-left:20px;font-size:14.5px;color:var(--on-ink-2);}
+  .card__list li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:1px;
+    background:var(--sig-400);}
+  .prob__media--card .link{margin-top:auto;}
+  @media (max-width:900px){.prob__media--card{aspect-ratio:auto;}}
 </style>
 </head>
 <body>
@@ -835,8 +852,17 @@
   <div class="shell">
     <div class="prob__grid">
       <div class="prob__figure">
-        <div class="prob__media" data-reveal="mask">
-          <img src="img/portrait.jpg" alt="Jonas Mionnet" loading="lazy" width="1200" height="1500" onerror="this.onerror=null;this.src='img/team.jpg';this.alt=''">
+        <div class="prob__media prob__media--card" data-reveal="mask">
+          <p class="card__eyebrow">Interlocuteur unique</p>
+          <p class="card__name">Jonas&nbsp;Mionnet</p>
+          <p class="card__role">Conception, installation, recette et maintenance</p>
+          <ul class="card__list">
+            <li>Un seul interlocuteur, du premier fichier à la livraison</li>
+            <li>Ni agence, ni sous-traitant, ni service commercial</li>
+            <li>France uniquement, en euros</li>
+          </ul>
+          <a class="link" href="https://www.linkedin.com/in/jonas-mionnet-5339012a0" rel="noopener">Profil LinkedIn
+            <svg viewBox="0 0 24 24"><path d="M5 12h13"/><path d="m12 5 7 7-7 7"/></svg></a>
         </div>
       </div>
       <div>
@@ -859,8 +885,8 @@
             convenus — délai et nombre de cycles de correction écrits au devis.</li>
           <li><b>Une annexe RGPD (art. 28)</b> est jointe à chaque devis : ce que je fais de vos
             documents, combien de temps, avec quelles mesures.</li>
-          <li><b>Une documentation d'exploitation</b> vous est remise à la livraison : un autre
-            prestataire pourrait reprendre l'instance demain.</li>
+          <li><b>Une documentation d'exploitation</b> vous est remise à la livraison : elle permet
+            à un autre prestataire d'administrer l'instance.</li>
         </ul>
         <a class="link" style="margin-top:26px" href="https://www.linkedin.com/in/jonas-mionnet-5339012a0" data-reveal="up" data-delay="300">
           Mon profil LinkedIn
@@ -996,7 +1022,7 @@
           <p class="form__note">Vos informations servent uniquement à répondre à votre demande.
             Elles ne sont ni cédées ni utilisées à d'autres fins, et sont conservées trois ans au
             plus après notre dernier échange. Voir les
-            <a href="mentions-legales.html">mentions légales</a>.</p>
+            <a href="confidentialite.html">politique de confidentialité</a>.</p>
         </form>
       </div>
     </div>
@@ -1020,6 +1046,7 @@
         <a href="mailto:jonas@jonasmionnet.com">jonas@jonasmionnet.com</a>
         <a href="https://www.linkedin.com/in/jonas-mionnet-5339012a0">LinkedIn</a>
         <a href="mentions-legales.html">Mentions légales</a>
+        <a href="confidentialite.html">Confidentialité</a>
       </div>
     </div>
   </div>

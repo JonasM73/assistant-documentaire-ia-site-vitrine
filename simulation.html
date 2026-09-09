@@ -8,14 +8,14 @@
 <meta property="og:url" content="https://assistant-documentaire.com/simulation.html">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Assistant·docs — Jonas Mionnet">
-<meta property="og:title" content="Combien vous coûte la recherche d'information ?">
+<meta property="og:title" content="Chercher une information, ça se paie">
 <meta property="og:description" content="Mettez vos chiffres. Le calcul est fait devant vous, hypothèses visibles — y compris quand la réponse est que ça ne vaut pas le coup.">
 <meta property="og:image" content="https://assistant-documentaire.com/partage.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://assistant-documentaire.com/simulation.html">
 <meta name="theme-color" content="#070D0B">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%23070D0B'/%3E%3Cpath d='M18 20h20M18 30h28M18 40h16' stroke='%23F2F5F3' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='42' cy='42' r='9' fill='none' stroke='%234ADE80' stroke-width='4.5'/%3E%3Cpath d='M49 49l6 6' stroke='%234ADE80' stroke-width='4.5' stroke-linecap='round'/%3E%3C/svg%3E">
-<title>Ce que la recherche d'information vous coûte — Assistant·docs</title>
+<title>Chercher une information, ça se paie — Assistant·docs</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;450;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
@@ -131,21 +131,18 @@
 <section class="tete">
   <div class="shell">
     <p class="eyebrow" data-reveal="fade"><a class="link" href="index.html">← Retour au site</a></p>
-    <h1 data-reveal="fade" data-split>Combien vous coûte la recherche d'information ?</h1>
+    <h1 data-reveal="fade" data-split>Chercher une information, ça se paie.</h1>
     <p class="lead" data-reveal="up" data-delay="140">
-      Je ne vais pas vous sortir un chiffre inventé. Mettez les vôtres, le calcul se fait devant
-      vous et toutes les hypothèses sont écrites en bas de page. Les valeurs de départ sont
-      volontairement prudentes — et si le résultat dit que ça ne vaut pas le coup chez vous,
+      Ce temps-là n'apparaît sur aucune facture, mais vous le payez en salaires toute l'année.
+      Trois curseurs, votre chiffre. Et s'il dit que ça ne vaut pas le coup chez vous,
       il vous le dira aussi.
     </p>
   </div>
 </section>
 
-<!-- ====================== TEMPS INTERNE ====================== -->
+<!-- ====================== LE CALCUL ====================== -->
 <section class="band band--tight">
   <div class="shell">
-    <p class="eyebrow" data-reveal="fade">1 — Le temps de vos équipes</p>
-    <h2 class="h2" data-reveal="fade" data-split>Ce que vous payez déjà, sans le voir.</h2>
 
     <div class="calc">
       <div class="champs" data-reveal="up">
@@ -153,127 +150,55 @@
         <p class="sous">Faites glisser. Tout se recalcule.</p>
 
         <div class="champ">
-          <label for="c1">Questions internes ou clients par jour <span class="val" id="v1">12</span></label>
-          <input type="range" id="c1" min="2" max="60" value="12" step="1">
-          <p class="aide">« Quel est le tarif ? », « quelle procédure ? », « que dit le contrat ? » —
-            toutes celles dont la réponse est écrite quelque part.</p>
+          <label for="c1">Recherches par jour, dans toute l'équipe <span class="val" id="v1">12</span></label>
+          <input type="range" id="c1" min="2" max="60" value="12" step="1" aria-describedby="a1">
+          <p class="aide" id="a1">« Quel est le tarif ? », « quelle procédure ? », « que dit le contrat ? » —
+            toutes celles dont la réponse est déjà écrite quelque part.</p>
         </div>
 
         <div class="champ">
-          <label for="c2">Minutes pour retrouver la réponse <span class="val" id="v2">7</span></label>
-          <input type="range" id="c2" min="2" max="30" value="7" step="1">
-          <p class="aide">Comptez aussi l'interruption de la personne « qui sait ».</p>
+          <label for="c2">Minutes pour retrouver la réponse <span class="val" id="v2">7 min</span></label>
+          <input type="range" id="c2" min="2" max="30" value="7" step="1" aria-describedby="a2">
+          <p class="aide" id="a2">Ouvrir le bon fichier, faire défiler, demander à un collègue,
+            attendre sa réponse. Comptez la vraie durée, pas la meilleure.</p>
         </div>
 
         <div class="champ">
           <label for="c3">Coût horaire chargé de qui cherche <span class="val" id="v3">32 €</span></label>
-          <input type="range" id="c3" min="18" max="90" value="32" step="1">
-          <p class="aide">Salaire brut + charges, divisé par les heures travaillées.</p>
-        </div>
-
-        <div class="champ">
-          <label for="c4">Part des recherches que l'assistant évite <span class="val" id="v4">70 %</span></label>
-          <input type="range" id="c4" min="30" max="95" value="70" step="5">
-          <p class="aide">Il ne remplace pas tout. Les cas particuliers, les négociations et les
-            décisions restent humains.</p>
+          <input type="range" id="c3" min="18" max="90" value="32" step="1" aria-describedby="a3">
+          <p class="aide" id="a3">Salaire brut plus charges, divisé par les heures travaillées.
+            Autour de 32 € pour un salarié à 2 200 € net.</p>
         </div>
       </div>
 
-      <div class="res" aria-live="polite" data-reveal="up" data-delay="120">
-        <div class="res__chiffre" id="rHeures">7 h 00</div>
-        <div class="res__sous">par semaine, passées à chercher</div>
-        <div class="ligne"><span>Sur une année (46 semaines travaillées)</span><b id="rAn">322 h</b></div>
-        <div class="ligne"><span>Ce que ces heures vous coûtent en salaire</span><b id="rCout">10 304 €</b></div>
-        <div class="ligne fort"><span>Temps rendu, valorisé au coût chargé</span><b id="rGain">7 213 €</b></div>
-        <div class="ligne"><span>Ce que l'assistant coûte la première année</span><b id="rPrix">4 648 €</b></div>
-        <div class="verdict" id="rVerdict"></div>
-      </div>
-    </div>
-  </div>
-</section>
+      <div class="res" data-reveal="up" data-delay="120">
+        <p class="res__chiffre" id="r-perdu" aria-live="polite">10 304 €</p>
+        <p class="res__sous">partent chaque année en recherche d'information —
+          <span id="r-heures">322 heures</span>, soit <span id="r-semaines">9,2 semaines</span>
+          de travail à temps plein.</p>
 
-<!-- ====================== RÉPONSES CLIENTS ====================== -->
-<section class="band band--tight" style="background:var(--ink-950);">
-  <div class="shell">
-    <p class="eyebrow" data-reveal="fade">2 — Les demandes de vos clients</p>
-    <h2 class="h2" data-reveal="fade" data-split>Le devis qui part chez le concurrent parce qu'il a répondu avant vous.</h2>
-    <p class="lead" style="max-width:64ch;margin-top:20px" data-reveal="up" data-delay="120">
-      Ce second calcul est <b>une estimation, pas une mesure</b> : personne ne sait exactement
-      combien d'affaires se perdent faute de réponse rapide. C'est vous qui fixez la part perdue —
-      mettez-la basse si vous préférez. Laissez le curseur à zéro et ce bloc n'entre pas dans le
-      total.
-    </p>
+        <div class="ligne"><span>Ce que l'assistant vous rend, prudemment</span><b id="r-rendu">4 239 €</b></div>
+        <div class="ligne"><span>Budget de la première année, tout compris</span><b id="r-budget">4 499 €</b></div>
+        <div class="ligne fort"><span>Différence sur douze mois</span><b id="r-solde">− 260 €</b></div>
 
-    <div class="calc">
-      <div class="champs" data-reveal="up">
-        <h3>Vos demandes entrantes</h3>
-        <p class="sous">Uniquement celles où une réponse rapide change la décision.</p>
-
-        <div class="champ">
-          <label for="d1">Demandes clients par mois <span class="val" id="w1">40</span></label>
-          <input type="range" id="d1" min="0" max="300" value="40" step="5">
-        </div>
-
-        <div class="champ">
-          <label for="d2">Valeur moyenne d'une affaire signée <span class="val" id="w2">1 200 €</span></label>
-          <input type="range" id="d2" min="100" max="20000" value="1200" step="100">
-          <p class="aide">Marge, pas chiffre d'affaires, si vous voulez rester prudent.</p>
-        </div>
-
-        <div class="champ">
-          <label for="d3">Part de ces demandes qui se transforment <span class="val" id="w3">20 %</span></label>
-          <input type="range" id="d3" min="1" max="60" value="20" step="1">
-        </div>
-
-        <div class="champ">
-          <label for="d4">Part perdue faute de réponse assez rapide <span class="val" id="w4">5 %</span></label>
-          <input type="range" id="d4" min="0" max="20" value="5" step="1">
-          <p class="aide">À zéro, ce bloc est ignoré. C'est le curseur le plus discutable de la
-            page : mettez ce que vous croyez, pas ce qui m'arrange.</p>
-        </div>
-      </div>
-
-      <div class="res" aria-live="polite" data-reveal="up" data-delay="120">
-        <div class="res__chiffre" id="rPerdu">5 760 €</div>
-        <div class="res__sous">par an, en affaires qui partent ailleurs</div>
-        <div class="ligne"><span>Demandes traitées par an</span><b id="rDem">480</b></div>
-        <div class="ligne"><span>Affaires signées par an</span><b id="rSign">96</b></div>
-        <div class="ligne"><span>Affaires perdues faute de réactivité</span><b id="rPerte">4,8</b></div>
-        <div class="verdict" id="rVerdict2"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ====================== TOTAL ====================== -->
-<section class="band band--tight">
-  <div class="shell shell--tight">
-    <div class="res" style="text-align:center;padding:clamp(34px,5vw,60px)" data-reveal="scale">
-      <p class="eyebrow" style="justify-content:center;color:var(--lime)">Sur douze mois</p>
-      <div class="res__chiffre" id="rTotal" style="font-size:clamp(3rem,8vw,5.6rem);margin:12px 0 6px">12 973 €</div>
-      <div class="res__sous" id="rTotalSous">de temps rendu et d'affaires conservées, pour 4 648 € investis la première année</div>
-      <div class="verdict" id="rVerdictTotal" style="text-align:left;max-width:56ch;margin:22px auto 0"></div>
-      <div class="hero__cta" style="justify-content:center;margin-top:30px">
-        <a class="btn btn--sig" href="#devis" data-magnetic="0.25"><span>Demander ma mini-démo</span>
-          <svg viewBox="0 0 24 24"><path d="M5 12h13"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <p class="verdict" id="r-verdict"></p>
       </div>
     </div>
 
     <p class="hyp" data-reveal="up">
-      <b>Les hypothèses, en clair.</b> Année de 46 semaines travaillées et de 5 jours ouvrés.
-      Le coût horaire chargé est celui que vous entrez, appliqué à toutes les recherches.
-      Le coût retenu est volontairement le plus élevé : 2 500 € de mise en place, la maintenance
-      facultative à 149 € par mois, et environ 30 € par mois de frais techniques payés directement
-      à vos fournisseurs — soit 4 648 € la première année et 2 148 € les suivantes.
-      <b>Sans la maintenance, le calcul vous est encore plus favorable</b> ; je préfère la compter
-      pour ne pas vous vendre un chiffre embelli.
-      <b>Ce que vous récupérez, ce sont des heures, pas de la trésorerie</b> — elles se
-      réinvestissent là où votre équipe crée de la valeur, elles n'apparaissent pas sur votre
-      compte en banque. Les frais techniques, eux, restent visibles et plafonnables sur vos
-      propres comptes. Le second bloc est une estimation que vous pilotez entièrement.
-      Aucun de ces chiffres n'est une promesse contractuelle : ce sont vos hypothèses, calculées
-      devant vous.
+      <b>Comment c'est calculé, sans rien cacher.</b> 230 jours travaillés par an.
+      Avec l'assistant, une recherche descend à <b>une minute</b> — le temps de lire la réponse
+      <i>et</i> d'ouvrir le document cité pour la vérifier. Je ne compte que
+      <b>48 % des recherches</b> : environ six sur dix passeront réellement par l'outil plutôt que
+      par l'habitude, et sur celles-là huit réponses sur dix seront directement utilisables.
+      Le budget de la première année, c'est <b>2 500 €</b> de mise en place, <b>onze mois</b> de
+      maintenance facultative à 149 € — les trente premiers jours de suivi sont inclus — et environ
+      <b>30 € par mois</b> de frais techniques que vous payez directement à vos fournisseurs.
+      Aucune vente supplémentaire n'est comptée : uniquement du temps.
+      <b>Ce résultat valorise du temps, ce n'est pas de la trésorerie qui rentre.</b>
+      Il sert à décider, pas à promettre.
     </p>
+
   </div>
 </section>
 
@@ -336,7 +261,7 @@
         <p class="form__note">Vos informations servent uniquement à répondre à votre demande.
           Elles ne sont ni cédées ni utilisées à d'autres fins, et sont conservées trois ans au
           plus après notre dernier échange. Voir les
-          <a href="mentions-legales.html">mentions légales</a>.</p>
+          <a href="confidentialite.html">politique de confidentialité</a>.</p>
       </form>
     </div>
   </div>
@@ -350,7 +275,8 @@
     <div>
       <a href="mailto:jonas@jonasmionnet.com">jonas@jonasmionnet.com</a> ·
       <a href="index.html">Accueil</a> ·
-      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="mentions-legales.html">Mentions légales</a> ·
+      <a href="confidentialite.html">Confidentialité</a>
     </div>
   </div>
 </footer>
@@ -359,129 +285,62 @@
 <script src="motion.js"></script>
 <script src="formulaire.js?v=3"></script>
 <script>
-/* ===================== SIMULATEUR ===================== */
-(function () {
-  "use strict";
-  /* Hypothèse volontairement HAUTE : mise en place, maintenance facultative prise,
-     et frais techniques payés par le client à ses fournisseurs. Sans la maintenance,
-     le coût est plus bas — le calcul reste donc prudent. */
-  var SEMAINES = 46, JOURS = 5, MISSION = 2500, MAINT = 149, TECH = 30;
-  var AN1 = MISSION + (MAINT + TECH) * 12, ANN = (MAINT + TECH) * 12;
-  var e = function (id) { return document.getElementById(id); };
+(function(){
+  var JOURS = 230, MIN_APRES = 1, PART = 0.48;
+  var MISE_EN_PLACE = 2500, MAINT = 149, MOIS_MAINT = 11, TECH = 30;
+  var BUDGET = MISE_EN_PLACE + MAINT * MOIS_MAINT + TECH * 12;   // 4 499 €
 
-  function nb(n, dec) {
-    return n.toLocaleString("fr-FR", { minimumFractionDigits: dec || 0,
-      maximumFractionDigits: dec || 0 });
-  }
-  function eur(n) { return nb(Math.round(n)) + " €"; }
-  function heures(h) {
-    var hh = Math.floor(h), mm = Math.round((h - hh) * 60);
-    if (mm === 60) { hh += 1; mm = 0; }
-    return hh + " h " + (mm < 10 ? "0" : "") + mm;
-  }
+  var eur = new Intl.NumberFormat('fr-FR',{maximumFractionDigits:0});
+  var un  = new Intl.NumberFormat('fr-FR',{maximumFractionDigits:1});
+  function e(id){ return document.getElementById(id); }
+  function euros(n){ return eur.format(Math.round(n)) + ' €'; }
 
-  var champs = ["c1", "c2", "c3", "c4", "d1", "d2", "d3", "d4"].map(e);
+  var c1=e('c1'), c2=e('c2'), c3=e('c3');
 
-  function calculer() {
-    var q = +e("c1").value, min = +e("c2").value, taux = +e("c3").value,
-        part = +e("c4").value / 100;
-    var dem = +e("d1").value, val = +e("d2").value,
-        conv = +e("d3").value / 100, perdu = +e("d4").value / 100;
+  function calcul(){
+    var q = +c1.value, m = +c2.value, t = +c3.value;
 
-    e("v1").textContent = q;
-    e("v2").textContent = min;
-    e("v3").textContent = taux + " €";
-    e("v4").textContent = Math.round(part * 100) + " %";
-    e("w1").textContent = dem;
-    e("w2").textContent = nb(val) + " €";
-    e("w3").textContent = Math.round(conv * 100) + " %";
-    e("w4").textContent = Math.round(perdu * 100) + " %";
+    var heures = q * JOURS * m / 60;
+    var perdu  = heures * t;
+    var gagne  = Math.max(m - MIN_APRES, 0) / 60 * q * JOURS * PART * t;
+    var solde  = gagne - BUDGET;
 
-    /* --- bloc 1 : temps interne --- */
-    var hSem = q * JOURS * min / 60;
-    var hAn = hSem * SEMAINES;
-    var coutAn = hAn * taux;
-    var gain = coutAn * part;
+    e('v1').textContent = q;
+    e('v2').textContent = m + ' min';
+    e('v3').textContent = t + ' €';
 
-    e("rHeures").textContent = heures(hSem);
-    e("rAn").textContent = nb(Math.round(hAn)) + " h";
-    e("rCout").textContent = eur(coutAn);
-    e("rGain").textContent = eur(gain);
-    e("rPrix").textContent = eur(AN1);
+    e('r-perdu').textContent    = euros(perdu);
+    e('r-heures').textContent   = eur.format(Math.round(heures)) + ' heures';
+    e('r-semaines').textContent = un.format(heures / 35) + ' semaines';
+    e('r-rendu').textContent    = euros(gagne);
+    e('r-budget').textContent   = euros(BUDGET);
+    e('r-solde').textContent    = (solde >= 0 ? '+ ' : '− ') + euros(Math.abs(solde)).replace('-','');
 
-    var v1 = e("rVerdict");
-    if (gain > AN1) {
-      var mois = AN1 / (gain / 12);
-      v1.className = "verdict";
-      v1.innerHTML = "Remboursé en <b>" + (mois < 1 ? "moins d'un mois" : Math.ceil(mois) + " mois")
-        + "</b>, puis <b>" + eur(gain - ANN) + "</b> de temps rendu chaque année.";
+    // seuil : combien de recherches par jour pour couvrir la première année
+    var parRecherche = Math.max(m - MIN_APRES, 0) / 60 * JOURS * PART * t;
+    var seuil = parRecherche > 0 ? Math.ceil(BUDGET / parRecherche) : null;
+
+    var v = e('r-verdict');
+    if (solde >= 0) {
+      v.className = 'verdict';
+      v.innerHTML = '<b>À ce rythme, ça se tient.</b> La valeur du temps rendu dépasse de '
+        + euros(solde) + ' le budget de la première année, et les années suivantes ne coûtent '
+        + 'plus que la maintenance et les frais techniques. Le seuil, chez vous, est à environ '
+        + seuil + ' recherches par jour.';
     } else {
-      v1.className = "verdict negatif";
-      v1.innerHTML = "À ce niveau d'usage, l'assistant ne se rembourse pas sur le seul temps "
-        + "interne la première année. <b>Autant vous le dire ici qu'à l'appel.</b>";
-    }
-
-    /* --- bloc 2 : demandes clients --- */
-    var demAn = dem * 12;
-    var signees = demAn * conv;
-    var pertes = signees * perdu;
-    var manque = pertes * val;
-
-    e("rDem").textContent = nb(demAn);
-    e("rSign").textContent = nb(Math.round(signees));
-    e("rPerte").textContent = nb(pertes, pertes < 10 ? 1 : 0);
-    e("rPerdu").textContent = eur(manque);
-
-    var v2 = e("rVerdict2");
-    if (perdu === 0 || dem === 0) {
-      v2.className = "verdict";
-      v2.innerHTML = "Curseur à zéro : ce bloc n'entre pas dans le total. "
-        + "<b>C'est l'hypothèse par défaut la plus prudente.</b>";
-    } else {
-      v2.className = "verdict";
-      v2.innerHTML = "Soit <b>" + nb(pertes, pertes < 10 ? 1 : 0) + " affaire"
-        + (pertes >= 2 ? "s" : "") + "</b> par an. Une seule récupérée "
-        + (val >= AN1 ? "paie déjà l'assistant." : "couvre "
-          + Math.round(val / AN1 * 100) + " % de la première année.");
-    }
-
-    /* --- total --- */
-    var total = gain + manque;
-    e("rTotal").textContent = eur(total);
-    e("rTotalSous").textContent = "de temps rendu et d'affaires conservées, pour "
-      + eur(AN1) + " investis la première année";
-
-    var vt = e("rVerdictTotal");
-    /* garde-fou : si l'estimation « affaires perdues » écrase tout le reste,
-       on le dit — un chiffre invraisemblable décrédibilise la page entière. */
-    if (manque > gain * 4 && manque > 0) {
-      vt.className = "verdict negatif";
-      vt.innerHTML = "<b>Attention : le second bloc pilote à lui seul ce total.</b> "
-        + "Il repose sur une estimation que vous avez fixée, pas sur une mesure. "
-        + "Baissez la part perdue faute de réactivité jusqu'à un chiffre que vous "
-        + "seriez prêt à défendre devant votre comptable — le premier bloc, lui, "
-        + "repose sur des heures réellement travaillées.";
-      return;
-    }
-    if (total > AN1) {
-      var moisT = AN1 / (total / 12);
-      vt.className = "verdict";
-      vt.innerHTML = "Sur vos hypothèses, l'assistant est remboursé en <b>"
-        + (moisT < 1 ? "moins d'un mois" : Math.ceil(moisT) + " mois") + "</b>, "
-        + "puis vous laisse <b>" + eur(total - ANN) + "</b> par an. "
-        + "Ces chiffres sont les vôtres, pas les miens : refaites-les à la baisse, "
-        + "l'ordre de grandeur tient encore.";
-    } else {
-      vt.className = "verdict negatif";
-      vt.innerHTML = "Sur vos hypothèses, <b>ça ne se rembourse pas la première année</b>. "
-        + "Soit votre volume de questions est trop faible, soit les réponses sont déjà "
-        + "faciles à trouver chez vous. Dans les deux cas, gardez votre argent — "
-        + "écrivez-moi quand même si vous voulez en discuter.";
+      v.className = 'verdict negatif';
+      v.innerHTML = '<b>À ce volume, je vous dirais de ne pas l\'acheter.</b> Il faudrait environ '
+        + (seuil ? seuil : '—') + ' recherches par jour pour que ça se justifie, contre ' + q
+        + ' aujourd\'hui. Écrivez-moi quand même si vous pensez que le compte est sous-estimé : '
+        + 'la plupart des équipes comptent les recherches longues et oublient les courtes.';
     }
   }
 
-  champs.forEach(function (c) { c.addEventListener("input", calculer); });
-  calculer();
+  [c1,c2,c3].forEach(function(el){
+    el.addEventListener('input', calcul);
+    el.addEventListener('change', calcul);
+  });
+  calcul();
 })();
 </script>
 </body>

@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /src/
+Disallow: /DEPLOIEMENT.md
 
 Sitemap: https://assistant-documentaire.com/sitemap.xml

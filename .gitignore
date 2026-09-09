@@ -1,3 +1,22 @@
+# Fichiers système
 .DS_Store
 Thumbs.db
+desktop.ini
 *.bak
+
+# Dépendances — ne doivent jamais partir sur Cloudflare Pages
+# (le site est statique : aucune étape de build, dossier de sortie « / »).
+node_modules/
+package-lock.json
+
+# Refonte React abandonnée le 08/09/2026 : incomplète et non constructible.
+# Le site en ligne est le site statique (index.html). Reprendre la refonte
+# dans un dépôt séparé si elle est relancée un jour.
+src/
+public/
+
+# Documentation interne — servie publiquement tant qu'elle est au dépôt,
+# puisque le dossier de sortie est la racine.
+DEPLOIEMENT.md
+Claude outputs/
+video/

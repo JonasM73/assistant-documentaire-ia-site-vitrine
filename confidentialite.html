@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<meta name="description" content="Quelles données sont collectées sur assistant-documentaire.com, pourquoi, qui les reçoit, combien de temps, et comment exercer vos droits.">
+<link rel="canonical" href="https://assistant-documentaire.com/confidentialite.html">
+<meta property="og:title" content="Politique de confidentialité — Assistant IA sur vos documents">
+<meta property="og:url" content="https://assistant-documentaire.com/confidentialite.html">
+<meta property="og:image" content="https://assistant-documentaire.com/partage.png">
+<meta name="theme-color" content="#070D0B">
+<title>Politique de confidentialité — Assistant IA sur vos documents</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;700&family=Inter:wght@400;450;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="da.css">
+<style>
+  html{scroll-behavior:smooth;}
+
+  .nav{position:fixed;top:0;left:0;right:0;z-index:300;
+    transition:background .6s var(--e),backdrop-filter .6s var(--e);}
+  .nav.is-stuck{background:rgba(7,13,11,.74);
+    -webkit-backdrop-filter:blur(18px) saturate(1.5);backdrop-filter:blur(18px) saturate(1.5);
+    box-shadow:0 1px 0 var(--rule-ink-2);}
+  .nav__in{display:flex;align-items:center;gap:24px;height:clamp(64px,7vw,84px);
+    max-width:var(--maxw);margin:0 auto;padding-left:var(--gut);padding-right:var(--gut);}
+  .brand{display:flex;align-items:baseline;font-family:var(--disp);font-weight:800;
+    font-size:17px;letter-spacing:-.035em;}
+  .brand i{font-style:normal;color:var(--sig-400);}
+
+  /* --- ouverture éditoriale ------------------------------------------- */
+  .head{position:relative;overflow:hidden;padding:clamp(140px,17vw,220px) 0 clamp(46px,6vw,80px);}
+  .head__bg{position:absolute;inset:-18% 0;z-index:0;opacity:.42;}
+  .head__bg img{width:100%;height:100%;object-fit:cover;filter:grayscale(.5) contrast(1.02) brightness(1.1);}
+  .head__veil{position:absolute;inset:0;z-index:1;
+    background:linear-gradient(180deg,rgba(8,15,13,.72),rgba(12,22,19,.88) 62%,var(--ink-900)),
+      radial-gradient(70% 60% at 84% 6%,var(--sig-glow),transparent 62%);}
+  .head__in{position:relative;z-index:2;}
+  .head h1{font-size:var(--t-h1);line-height:.92;margin:0 0 20px;}
+  .head .upd{font:var(--t-micro);letter-spacing:.19em;text-transform:uppercase;color:var(--on-ink-4);}
+
+  /* --- corps ------------------------------------------------------------ */
+  .doc{padding-bottom:clamp(70px,9vw,130px);}
+  .doc__grid{display:grid;grid-template-columns:minmax(0,.3fr) minmax(0,.7fr);
+    gap:clamp(26px,4vw,72px);align-items:start;}
+  .toc{position:sticky;top:clamp(96px,11vw,124px);}
+  .toc p{font:var(--t-micro);letter-spacing:.19em;text-transform:uppercase;
+    color:var(--on-ink-4);margin-bottom:18px;}
+  .toc a{display:block;padding:9px 0;font-size:14px;color:var(--on-ink-3);
+    border-top:1px solid var(--rule-ink-2);transition:color .3s var(--e),padding-left .3s var(--e);}
+  .toc a:hover{color:var(--sig-400);padding-left:8px;}
+
+  .doc h2{font-size:clamp(1.15rem,1.9vw,1.6rem);margin:clamp(40px,5vw,66px) 0 14px;
+    color:var(--on-ink);scroll-margin-top:110px;}
+  .doc h2:first-of-type{margin-top:0;}
+  .doc h2::before{content:"";display:block;width:34px;height:1px;background:var(--sig-400);
+    margin-bottom:20px;}
+  .doc p{font-family:var(--serif);font-style:normal;font-size:clamp(1.02rem,1.2vw,1.16rem);
+    line-height:1.7;color:var(--on-ink-2);margin:0 0 14px;max-width:66ch;}
+  .doc a:not(.btn){color:var(--sig-300);text-decoration:underline;text-underline-offset:3px;
+    text-decoration-thickness:1px;transition:color .3s var(--e);}
+  .doc a:not(.btn):hover{color:var(--lime);}
+  .todo{display:inline-block;font-family:var(--mono);font-size:13px;color:var(--amber);
+    background:rgba(245,165,36,.09);box-shadow:inset 0 0 0 1px rgba(245,165,36,.28);
+    border-radius:var(--r-xs);padding:3px 10px;}
+
+  .back{margin-top:clamp(46px,6vw,80px);padding-top:30px;border-top:1px solid var(--rule-ink-2);}
+
+  .foot{background:var(--ink-950);padding:clamp(34px,4vw,52px) 0;}
+  .foot__in{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;
+    font-size:13.5px;color:var(--on-ink-4);}
+  .foot__in a{color:var(--on-ink-3);transition:color .3s var(--e);}
+  .foot__in a:hover{color:var(--sig-400);}
+
+  @media (max-width:900px){
+    .doc__grid{grid-template-columns:1fr;}
+    .toc{position:static;display:none;}
+  }
+
+  .tbl{width:100%;border-collapse:collapse;margin:6px 0 22px;font-size:14.5px;
+    color:var(--on-ink-2);display:block;overflow-x:auto;}
+  .tbl th,.tbl td{text-align:left;vertical-align:top;padding:11px 14px;
+    border-bottom:1px solid var(--rule-ink-2);}
+  .tbl th{font:var(--t-micro);letter-spacing:.14em;text-transform:uppercase;
+    color:var(--on-ink-4);white-space:nowrap;}
+  .tbl tr:last-child td{border-bottom:none;}
+  .tbl td:first-child{color:var(--on-ink);}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div data-progress aria-hidden="true"></div>
+
+<header class="nav" data-nav>
+  <div class="nav__in">
+    <a class="brand" href="index.html">Assistant<i>&middot;</i>docs</a>
+    <a class="link" style="margin-left:auto" href="index.html">
+      <svg viewBox="0 0 24 24"><path d="M19 12H6"/><path d="m12 19-7-7 7-7"/></svg>
+      Retour au site</a>
+  </div>
+</header>
+
+<header class="head">
+  <div class="head__bg" data-parallax="0.08">
+    <img src="img/texture.jpg" alt="" loading="lazy">
+  </div>
+  <div class="head__veil"></div>
+  <div class="head__in shell shell--tight">
+    <p class="eyebrow" data-reveal="fade">Protection des données</p>
+    <h1 data-reveal="fade" data-split>Politique de confidentialité</h1>
+    <p class="upd" data-reveal="up" data-delay="160">Dernière mise à jour : 9 septembre 2026</p>
+  </div>
+</header>
+
+<main class="doc">
+  <div class="shell shell--tight doc__grid">
+    <nav class="toc" aria-label="Sommaire">
+      <p>Sommaire</p>
+      <a href="#responsable">Qui traite vos données</a>
+      <a href="#traitements">Données et finalités</a>
+      <a href="#destinataires">Destinataires</a>
+      <a href="#transferts">Transferts hors UE</a>
+      <a href="#cookies">Cookies et stockage local</a>
+      <a href="#securite">Sécurité</a>
+      <a href="#droits">Vos droits</a>
+      <a href="#clients">Assistants clients</a>
+      <a href="#modif">Modifications</a>
+    </nav>
+
+    <div>
+      <h2 id="responsable" data-reveal="up">Qui traite vos données</h2>
+      <p data-reveal="up">Le responsable du traitement est <strong>Jonas Mionnet</strong>,
+        entrepreneur individuel exerçant en France, éditeur du site assistant-documentaire.com
+        (voir les <a href="mentions-legales.html">mentions légales</a>).
+        Contact pour toute question ou demande relative à vos données :
+        <a href="mailto:jonas@jonasmionnet.com">jonas@jonasmionnet.com</a>.</p>
+      <p data-reveal="up">Ce site ne crée aucun compte, ne pratique aucun profilage publicitaire,
+        ne revend aucune donnée et ne prend aucune décision automatisée. Les traitements décrits
+        ci-dessous sont les seuls réalisés depuis ce site.</p>
+
+      <h2 id="traitements" data-reveal="up">Ce qui est collecté, pourquoi, et sur quelle base</h2>
+      <table class="tbl" data-reveal="up">
+        <thead><tr><th>Traitement</th><th>Données</th><th>Finalité</th><th>Base légale</th><th>Durée</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Formulaire de demande</td>
+            <td>Nom, entreprise, adresse électronique, site, nature de la demande, message</td>
+            <td>Répondre à votre demande et, le cas échéant, préparer un devis</td>
+            <td>Mesures précontractuelles prises à votre demande (art. 6.1.b)</td>
+            <td>3 ans après le dernier échange</td>
+          </tr>
+          <tr>
+            <td>Échanges par courriel</td>
+            <td>Adresse électronique et contenu de vos messages</td>
+            <td>Assurer le suivi de la relation</td>
+            <td>Mesures précontractuelles ou exécution du contrat (art. 6.1.b)</td>
+            <td>3 ans après le dernier échange, ou durée légale de conservation des pièces contractuelles</td>
+          </tr>
+          <tr>
+            <td>Prise de rendez-vous</td>
+            <td>Nom, adresse électronique, créneau retenu</td>
+            <td>Organiser un échange de 15 minutes</td>
+            <td>Mesures précontractuelles (art. 6.1.b)</td>
+            <td>1 an après le rendez-vous</td>
+          </tr>
+          <tr>
+            <td>Essai de l'assistant de démonstration</td>
+            <td>Texte des questions posées, horodatage</td>
+            <td>Faire fonctionner la démonstration et corriger ses défauts</td>
+            <td>Intérêt légitime à démontrer et améliorer le service (art. 6.1.f)</td>
+            <td>30 jours</td>
+          </tr>
+          <tr>
+            <td>Journaux techniques</td>
+            <td>Adresse IP, date, page demandée, agent du navigateur</td>
+            <td>Sécurité, prévention des abus, bon fonctionnement</td>
+            <td>Intérêt légitime à sécuriser le service (art. 6.1.f)</td>
+            <td>Durée courte fixée par l'hébergeur</td>
+          </tr>
+        </tbody>
+      </table>
+      <p data-reveal="up"><strong>N'envoyez pas de document confidentiel par le formulaire.</strong>
+        Lorsqu'une démonstration sur vos propres documents est convenue, un cadre écrit de
+        confidentialité, de transfert et de suppression vous est remis <em>avant</em> tout envoi de
+        fichier. Les documents transmis pour une démonstration sont supprimés dans les 30 jours
+        suivant celle-ci, et une attestation est délivrée sur demande.</p>
+
+      <h2 id="destinataires" data-reveal="up">Qui reçoit ces données</h2>
+      <p data-reveal="up">Aucune donnée n'est vendue, louée ni transmise à des fins publicitaires.
+        Les seuls destinataires sont les prestataires techniques qui font fonctionner le site,
+        agissant comme sous-traitants sur instruction :</p>
+      <table class="tbl" data-reveal="up">
+        <thead><tr><th>Prestataire</th><th>Rôle</th><th>Localisation</th></tr></thead>
+        <tbody>
+          <tr><td>Cloudflare, Inc.</td><td>Hébergement du site et acheminement des requêtes</td><td>Réseau mondial, société établie aux États-Unis</td></tr>
+          <tr><td>Resend, Inc.</td><td>Acheminement des messages du formulaire</td><td>Envoi configuré en région européenne (Irlande)</td></tr>
+          <tr><td>Google Ireland Ltd.</td><td>Polices de caractères ; prise de rendez-vous ; boîte de réception</td><td>Irlande, avec infrastructure du groupe hors UE</td></tr>
+          <tr><td>Railway Corp.</td><td>Hébergement de l'instance de démonstration</td><td>Région choisie à la création de l'instance</td></tr>
+          <tr><td>Anthropic PBC</td><td>Modèle de langage interrogé par l'assistant de démonstration</td><td>Voir le paragraphe « Transferts » ci-dessous</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="transferts" data-reveal="up">Transferts hors de l'Union européenne</h2>
+      <p data-reveal="up">Certains de ces prestataires sont établis aux États-Unis ou y conservent des
+        données. Ces transferts sont encadrés par les garanties prévues au chapitre V du RGPD, en
+        particulier les clauses contractuelles types et, le cas échéant, le cadre de protection des
+        données UE&ndash;États-Unis.</p>
+      <p data-reveal="up">En particulier, et pour être précis plutôt que rassurant :
+        <strong>héberger une instance en Europe ne signifie pas que l'ensemble du traitement reste
+        européen.</strong> Lorsqu'une question est posée à l'assistant, la question et les extraits
+        de documents nécessaires à la réponse sont transmis au fournisseur du modèle de langage.
+        Le lieu d'acheminement de ces requêtes est paramétrable, mais le stockage associé peut être
+        situé hors de l'Union. Les lieux de traitement et les durées de conservation propres à
+        chaque service sont détaillés, pour les assistants livrés aux clients, dans l'annexe de
+        sous-traitance jointe au contrat.</p>
+
+      <h2 id="cookies" data-reveal="up">Cookies et stockage local</h2>
+      <p data-reveal="up"><strong>Ce site ne dépose aucun cookie de mesure d'audience, de publicité
+        ou de réseau social</strong>, et n'a donc pas de bandeau de consentement à vous imposer.</p>
+      <p data-reveal="up">Deux mécanismes techniques méritent d'être signalés. Les polices de
+        caractères sont chargées depuis Google Fonts : votre navigateur transmet alors son adresse IP
+        à Google pour obtenir les fichiers. Et si vous essayez l'assistant de démonstration, le code
+        d'accès que vous saisissez est conservé dans le stockage local de votre navigateur
+        (<em>localStorage</em>) pour la durée de l'essai : il ne quitte pas votre appareil et vous
+        pouvez l'effacer à tout moment en vidant les données du site.</p>
+      <p data-reveal="up">La prise de rendez-vous s'effectue sur Google Calendar, soumis à la
+        politique de confidentialité de Google.</p>
+
+      <h2 id="securite" data-reveal="up">Sécurité</h2>
+      <p data-reveal="up">Les échanges avec ce site sont chiffrés (HTTPS). L'accès à l'assistant de
+        démonstration est protégé par un code, et son administration par un mot de passe distinct.
+        Les documents de démonstration sont fictifs. Aucune donnée de santé, aucun dossier patient et
+        aucune donnée sensible au sens de l'article 9 du RGPD ne doit être transmise, ni pour une
+        démonstration, ni dans un assistant livré : le contrat l'interdit.</p>
+
+      <h2 id="droits" data-reveal="up">Vos droits</h2>
+      <p data-reveal="up">Vous disposez d'un droit d'accès, de rectification, d'effacement, de
+        limitation et de portabilité de vos données, ainsi que d'un droit d'opposition au traitement
+        fondé sur l'intérêt légitime et d'un droit de définir des directives relatives à leur sort
+        après votre décès.</p>
+      <p data-reveal="up">Pour les exercer, écrivez à
+        <a href="mailto:jonas@jonasmionnet.com">jonas@jonasmionnet.com</a> : une réponse vous sera
+        apportée dans un délai d'un mois. Une pièce justificative d'identité pourra être demandée en
+        cas de doute raisonnable sur l'identité du demandeur.</p>
+      <p data-reveal="up">Si la réponse ne vous satisfait pas, vous pouvez introduire une réclamation
+        auprès de la Commission nationale de l'informatique et des libertés (CNIL), 3 place de
+        Fontenoy, TSA 80715, 75334 Paris Cedex 07 —
+        <a href="https://www.cnil.fr" rel="noopener">cnil.fr</a>.</p>
+
+      <h2 id="clients" data-reveal="up">Les assistants livrés aux clients</h2>
+      <p data-reveal="up">La présente politique couvre le site et sa démonstration. Un assistant
+        livré à une entreprise cliente fonctionne sur les comptes techniques de cette entreprise,
+        qui en est le responsable de traitement. Dans ce cadre, Jonas Mionnet intervient comme
+        sous-traitant au sens de l'article 28 du RGPD, dans les conditions fixées par l'annexe de
+        sous-traitance jointe au contrat : nature et durée des opérations, catégories de données,
+        mesures de sécurité, sous-traitants ultérieurs, sort des données en fin de mission.</p>
+
+      <h2 id="modif" data-reveal="up">Modifications</h2>
+      <p data-reveal="up">Cette politique peut être mise à jour pour refléter une évolution du
+        service ou de la réglementation. La date de dernière mise à jour figure en tête de page ;
+        les modifications substantielles sont signalées aux clients par courriel.</p>
+
+      <div class="back" data-reveal="up">
+        <a class="btn btn--sig" href="index.html" data-magnetic="0.22"><span>Revenir au site</span>
+          <svg viewBox="0 0 24 24"><path d="M5 12h13"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="shell foot__in">
+    <div>Jonas Mionnet — assistants documentaires pour PME — France</div>
+    <div><a href="index.html">Accueil</a> &middot; <a href="mentions-legales.html">Mentions légales</a> &middot; <a href="confidentialite.html">Confidentialité</a> &middot; <a href="mailto:jonas@jonasmionnet.com">Contact</a></div>
+  </div>
+</footer>
+
+<script src="lenis.min.js"></script>
+<script src="motion.js"></script>
+</body>
+</html>
